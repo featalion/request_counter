@@ -47,8 +47,7 @@ func (rs *RequestStore) evictOld() {
 
 func (rs *RequestStore) processInput() {
 	var ri RequestInfo
-	for {
-		ri = <-rs.ch
+	for ri = range rs.ch {
 		rs.mux.Lock()
 		rs.list.PushFront(ri)
 		rs.mux.Unlock()
