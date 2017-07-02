@@ -66,11 +66,11 @@ func main() {
 			}
 		case "-h", "--help":
 			fmt.Printf(`%s command line arguments:
--f, --file - name of JSON file, that represents file store for request counter, default is 'rs.json'
--w, --window - duration of moving window in seconds, default is 60
--a, --address - network address to bind server to, default is ':8080'
+-f, --file - name of JSON file, that represents file store for request counter, default is '%s'
+-w, --window - duration of moving window in seconds, default is %d
+-a, --address - network address to bind server to, default is '%s'
 -h, --help - prints this help message and exists
-`, os.Args[0])
+`, os.Args[0], DefaultRequestStoreFileName, DefaultRequestStoreWindowSec, DefaultAddress)
 			os.Exit(0)
 		}
 	}
