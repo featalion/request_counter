@@ -1,5 +1,4 @@
 # Request Counter
-=============================
 
 ## Build and Run
 
