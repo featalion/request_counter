@@ -21,7 +21,7 @@ type CountHandler struct {
 }
 
 func (h *CountHandler) ServeHTTP(resp http.ResponseWriter, req *http.Request) {
-	if req.URL.String() != "/count" {
+	if req.URL.Path != "/count" {
 		resp.WriteHeader(http.StatusNotFound)
 		io.WriteString(resp, "Not Found\n")
 		return
